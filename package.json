@@ -1,0 +1,15 @@
+{
+  "name": "@eliasku/rtweekend-c-wasm",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "ts-node --esm tools/build.ts"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4",
+    "esbuild": "^0.15.10",
+    "esbuild-plugin-glsl-include": "^0.0.5",
+    "ts-node": "^10.9.1"
+  }
+}
