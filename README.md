@@ -5,7 +5,17 @@ Using minimalistic C and WebAssembly
 <p align="center">
 <img width="600" src="./images/final.jpg" alt="final render">
 </p>
+
 ## Build & Run
+
+Provide environment variables for LLVM and Binaryen if not match default locations
+
+```shell
+export LLVM_ROOT="/usr/local/opt/llvm"
+export BINARYEN_ROOT="/usr/local/opt/binaryen"
+```
+
+Install dependencies, build and start local server
 
 ```shell
 npm i
