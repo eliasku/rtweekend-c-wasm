@@ -1,7 +1,9 @@
 import {build} from 'esbuild';
 import {buildWasm} from "./build-wasm.js";
-import {copyFileSync, readFileSync, mkdirSync} from "fs";
+import {writeFileSync, copyFileSync, readFileSync, mkdirSync} from "fs";
 import {execSync} from "child_process";
+// import {config} from "@swc/core";
+// import {bundle, minify, transformFile} from "@swc/core";
 
 try {
     mkdirSync("build/public", {recursive: true});
@@ -12,6 +14,23 @@ buildWasm();
 
 copyFileSync("wasm/build/lib.wasm", "build/public/lib.wasm");
 copyFileSync("client/assets/index.html", "build/public/index.html");
+
+// const b = await bundle(
+// {
+//     mode: "production",
+//     target: "browser",
+//     workingDir: process.cwd(),
+//     entry: {
+//         'web': "./client/src/index.ts",
+//     },
+//     output: {
+//         name: "web",
+//         path: "./build/_index.js"
+//     },
+//     module: {},
+// });
+// // b.web.code = (await minify(b.web.code)).code;
+// writeFileSync("build/_index.js", b.web.code);
 
 const buildTasks = [
     build({
